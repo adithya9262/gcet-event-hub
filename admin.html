@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin Panel — Manage events and registrations for GCET Event Hub.">
+  <title>Admin Panel — GCET Event Hub</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="GCET Logo">
+        <span>GCET Event Hub<small class="college-name">Geetanjali College of Engg. & Tech.</small></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="register.html">Register</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html" class="btn btn-sm btn-primary">Admin</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Admin Login Section -->
+  <section class="admin-login" id="admin-login-section">
+    <div class="admin-login-card">
+      <div style="font-size: 3rem; margin-bottom: 15px;">🔐</div>
+      <h2>Admin Login</h2>
+      <p>Enter your credentials to access the dashboard</p>
+
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="admin-username" class="form-control" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="admin-password" class="form-control" placeholder="Enter password" required>
+        </div>
+        <p id="login-error" style="color: var(--danger); font-size: 0.85rem; margin-bottom: 15px; display: none;"></p>
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">🔓 Login</button>
+      </form>
+
+      <p style="margin-top: 20px; font-size: 0.8rem; color: var(--medium-gray);">
+        Authorized personnel only.
+      </p>
+    </div>
+  </section>
+
+  <!-- Admin Dashboard -->
+  <div id="admin-dashboard" style="display: none;">
+    <section class="admin-dashboard section">
+      <div class="container">
+
+        <!-- Dashboard Header -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap; gap: 15px;">
+          <div>
+            <h2 style="color: var(--white);">Admin Dashboard</h2>
+            <p style="color: var(--medium-gray); font-size: 0.9rem;">Manage events and view registrations</p>
+          </div>
+          <button class="btn btn-danger" onclick="adminLogout()">🚪 Logout</button>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="admin-stats">
+          <div class="admin-stat-card">
+            <span class="stat-number" id="admin-total-events">0</span>
+            <span class="stat-label">Total Events</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="stat-number" id="admin-total-registrations">0</span>
+            <span class="stat-label">Total Registrations</span>
+          </div>
+          <div class="admin-stat-card">
+            <span class="stat-number" id="admin-active-events">0</span>
+            <span class="stat-label">Active Events</span>
+          </div>
+        </div>
+
+        <!-- Events Management -->
+        <div class="admin-panel">
+          <h3>
+            📅 Manage Events
+            <button class="btn btn-primary btn-sm" onclick="addNewEvent()">+ Add Event</button>
+          </h3>
+          <div style="overflow-x: auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Event Name</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Prize</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-events-tbody">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Registrations Table -->
+        <div class="admin-panel">
+          <h3>📋 All Registrations</h3>
+          <div style="overflow-x: auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Roll No</th>
+                  <th>Year/Section</th>
+                  <th>Event</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="admin-regs-tbody">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Gallery Management -->
+        <div class="admin-panel">
+          <h3>
+            🖼️ Manage Gallery
+            <button class="btn btn-primary btn-sm" onclick="openGalleryAddModal()">+ Add Photo</button>
+          </h3>
+          <div id="admin-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Add/Edit Event Modal -->
+  <div class="modal-overlay" id="event-form-modal">
+    <div class="modal" style="max-width: 600px; text-align: left; max-height: 85vh; overflow-y: auto;">
+      <button class="close-modal" onclick="document.getElementById('event-form-modal').classList.remove('active')">✕</button>
+      <h3 id="event-form-title" style="margin-bottom: 20px;">Add New Event</h3>
+      <form id="event-form" data-edit-id="">
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Event Name</label>
+            <input type="text" id="ef-name" class="form-control" placeholder="Event name" required>
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="ef-category" class="form-control" required>
+              <option value="Tech">Tech</option>
+              <option value="Cultural">Cultural</option>
+              <option value="Workshop">Workshop</option>
+              <option value="Webinar">Webinar</option>
+              <option value="Sports">Sports</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="ef-date" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Time</label>
+            <input type="text" id="ef-time" class="form-control" placeholder="e.g., 10:00 AM - 04:00 PM" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" id="ef-location" class="form-control" placeholder="Event venue" required>
+        </div>
+        <!-- Event Image Upload -->
+        <div class="form-group">
+          <label>Event Image</label>
+          <div id="ef-image-preview" style="margin-bottom: 10px; display: none;">
+            <img id="ef-image-preview-img" src="" alt="Preview" style="width: 100%; max-height: 180px; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--glass-border);">
+          </div>
+          <input type="file" id="ef-image" accept="image/*" class="form-control" style="padding: 10px; cursor: pointer;" onchange="previewEventImage(this)">
+          <p style="font-size: 0.75rem; color: var(--medium-gray); margin-top: 4px;">Upload an image for the event (JPG, PNG)</p>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="ef-description" class="form-control" placeholder="Event description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Importance / Why Attend</label>
+          <textarea id="ef-importance" class="form-control" placeholder="Why students should attend this event" style="min-height: 80px;" required></textarea>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Prize</label>
+            <input type="text" id="ef-prize" class="form-control" placeholder="e.g., ₹25,000" required>
+          </div>
+          <div class="form-group">
+            <label>Deadline</label>
+            <input type="date" id="ef-deadline" class="form-control" required>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Status</label>
+            <select id="ef-status" class="form-control">
+              <option value="active">Active</option>
+              <option value="upcoming">Upcoming</option>
+              <option value="closed">Closed</option>
+            </select>
+          </div>
+          <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-top: 30px;">
+            <input type="checkbox" id="ef-certificate" checked style="width: 20px; height: 20px; accent-color: var(--gold);">
+            <label for="ef-certificate" style="margin: 0;">Provides Certificate</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Custom Link (optional)</label>
+          <input type="url" id="ef-link" class="form-control" placeholder="https://your-link.com">
+          <p style="font-size: 0.75rem; color: var(--medium-gray); margin-top: 4px;">Add a website, form, or any external link for this event</p>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;">💾 Save Event</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Gallery Add Photo Modal -->
+  <div class="modal-overlay" id="gallery-add-modal">
+    <div class="modal" style="max-width: 500px; text-align: left; max-height: 85vh; overflow-y: auto;">
+      <button class="close-modal" onclick="document.getElementById('gallery-add-modal').classList.remove('active')">✕</button>
+      <h3 style="margin-bottom: 20px;">Add Gallery Photo</h3>
+      <form id="gallery-add-form">
+        <div class="form-group">
+          <label>Photo Title</label>
+          <input type="text" id="gal-title" class="form-control" placeholder="e.g., TechVista 2025 — Keynote Session" required>
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select id="gal-category" class="form-control" required>
+            <option value="tech">Tech Events</option>
+            <option value="cultural">Cultural</option>
+            <option value="workshop">Workshops</option>
+            <option value="sports">Sports</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Photo</label>
+          <div id="gal-preview" style="margin-bottom: 10px; display: none;">
+            <img id="gal-preview-img" src="" alt="Preview" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--glass-border);">
+          </div>
+          <input type="file" id="gal-image" accept="image/*" class="form-control" style="padding: 10px; cursor: pointer;" onchange="previewGalleryImage(this)" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;">📸 Add to Gallery</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 GCET Event Hub — Admin Panel. Geetanjali College of Engineering & Technology.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

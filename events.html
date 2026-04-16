@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all active and upcoming events at Geetanjali College — conferences, cultural fests, hackathons, workshops, and more.">
+  <title>Events — GCET Event Hub</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="events">
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="GCET Logo">
+        <span>GCET Event Hub<small class="college-name">Geetanjali College of Engg. & Tech.</small></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="register.html">Register</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html" class="btn btn-sm btn-secondary">Admin</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>All Events</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Events</span>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Explore Our Events</h2>
+        <p>Filter by category and find the perfect event for you. Register before deadlines to secure your spot!</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs fade-in">
+        <button class="filter-tab active" data-category="all">All Events</button>
+        <button class="filter-tab" data-category="tech">💻 Tech</button>
+        <button class="filter-tab" data-category="cultural">🎭 Cultural</button>
+        <button class="filter-tab" data-category="workshop">🔧 Workshop</button>
+        <button class="filter-tab" data-category="webinar">🎙️ Webinar</button>
+        <button class="filter-tab" data-category="sports">⚽ Sports</button>
+      </div>
+
+      <!-- Events Grid -->
+      <div class="grid-3" id="events-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Info Section -->
+  <section class="section" style="background: rgba(255,255,255,0.02);">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>What You Get</h2>
+        <p>Every event at GCET offers an enriching experience</p>
+      </div>
+      <div class="grid-3">
+        <div class="stat-card fade-in" style="text-align: left; padding: 30px;">
+          <h4 style="color: var(--gold); margin-bottom: 10px;">🏆 Certificates</h4>
+          <p style="color: var(--medium-gray); font-size: 0.9rem;">
+            All participants receive a verified digital certificate upon completion. Certificates are recognized by the college and can be added to your resume and LinkedIn profile.
+          </p>
+        </div>
+        <div class="stat-card fade-in" style="text-align: left; padding: 30px; transition-delay: 0.1s;">
+          <h4 style="color: var(--gold); margin-bottom: 10px;">💰 Prize Money</h4>
+          <p style="color: var(--medium-gray); font-size: 0.9rem;">
+            Top performers in competitions and hackathons win exciting cash prizes, trophies, medals, and sponsored goodies from industry partners.
+          </p>
+        </div>
+        <div class="stat-card fade-in" style="text-align: left; padding: 30px; transition-delay: 0.2s;">
+          <h4 style="color: var(--gold); margin-bottom: 10px;">📚 Learning</h4>
+          <p style="color: var(--medium-gray); font-size: 0.9rem;">
+            Gain practical experience, industry insights, and hands-on skills that complement your academic learning. Workshops include kits and materials.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>GCET Event Hub</h4>
+          <p>Geetanjali College of Engineering and Technology's official event management platform.</p>
+          <div class="footer-social">
+            <a href="#" title="Facebook">📘</a>
+            <a href="#" title="Instagram">📸</a>
+            <a href="#" title="Twitter">🐦</a>
+            <a href="#" title="LinkedIn">💼</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="register.html">Register</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Event Categories</h4>
+          <a href="events.html">Tech Conferences</a>
+          <a href="events.html">Cultural Fests</a>
+          <a href="events.html">Hackathons</a>
+          <a href="events.html">Workshops</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p>📍 Geetanjali College, Hyderabad</p>
+          <p>📧 events@gcet.edu.in</p>
+          <p>📞 +91 98765 43210</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 GCET Event Hub — Geetanjali College of Engineering & Technology. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" title="Back to Top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

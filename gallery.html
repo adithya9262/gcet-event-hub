@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse photos from past events at Geetanjali College of Engineering and Technology.">
+  <title>Gallery — GCET Event Hub</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="gallery">
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="GCET Logo">
+        <span>GCET Event Hub<small class="college-name">Geetanjali College of Engg. & Tech.</small></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="register.html">Register</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html" class="btn btn-sm btn-secondary">Admin</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Event Gallery</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Gallery</span>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Memories from Past Events</h2>
+        <p>Relive the best moments from our college events</p>
+      </div>
+
+      <!-- Gallery Filters -->
+      <div class="filter-tabs fade-in" style="margin-bottom: 40px;">
+        <button class="filter-tab gallery-filter active" data-category="all">All</button>
+        <button class="filter-tab gallery-filter" data-category="tech">Tech Events</button>
+        <button class="filter-tab gallery-filter" data-category="cultural">Cultural</button>
+        <button class="filter-tab gallery-filter" data-category="workshop">Workshops</button>
+        <button class="filter-tab gallery-filter" data-category="sports">Sports</button>
+      </div>
+
+      <!-- Gallery Grid (Rendered by JS from localStorage) -->
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Dynamic content rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <button class="close-lightbox">✕</button>
+    <img src="" alt="Gallery Image">
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>GCET Event Hub</h4>
+          <p>Geetanjali College of Engineering and Technology's official event management platform.</p>
+          <div class="footer-social">
+            <a href="#" title="Facebook">📘</a>
+            <a href="#" title="Instagram">📸</a>
+            <a href="#" title="Twitter">🐦</a>
+            <a href="#" title="LinkedIn">💼</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="register.html">Register</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Event Categories</h4>
+          <a href="events.html">Tech Conferences</a>
+          <a href="events.html">Cultural Fests</a>
+          <a href="events.html">Hackathons</a>
+          <a href="events.html">Workshops</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p>📍 Geetanjali College, Hyderabad</p>
+          <p>📧 events@gcet.edu.in</p>
+          <p>📞 +91 98765 43210</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 GCET Event Hub — Geetanjali College of Engineering & Technology. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" title="Back to Top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

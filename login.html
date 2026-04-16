@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to GCET Event Hub — Geetanjali College of Engineering and Technology">
+  <title>Login — GCET Event Hub</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a0e27 0%, #141a3d 40%, #1a1f4e 100%);
+      overflow: hidden;
+    }
+
+    .login-wrapper {
+      width: 100%;
+      max-width: 460px;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .login-card {
+      background: rgba(20, 26, 61, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 20px;
+      padding: 45px 40px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(212, 175, 55, 0.05);
+      text-align: center;
+      animation: cardSlideUp 0.6s ease;
+    }
+
+    @keyframes cardSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      border: 3px solid rgba(212, 175, 55, 0.3);
+      padding: 8px;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+      background: #ffffff;
+    }
+
+    .login-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .login-card h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+
+    .login-card h1 span {
+      color: #d4af37;
+    }
+
+    .login-subtitle {
+      color: #8a8fb5;
+      font-size: 0.85rem;
+      margin-bottom: 30px;
+    }
+
+    .login-form .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .login-form label {
+      display: block;
+      color: #c0c4e0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .login-form .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .login-form .form-control:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .login-form .form-control::placeholder {
+      color: #5a5f80;
+    }
+
+    .login-error {
+      color: #ff6b6b;
+      font-size: 0.82rem;
+      margin-bottom: 15px;
+      display: none;
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(255, 107, 107, 0.08);
+      border: 1px solid rgba(255, 107, 107, 0.15);
+      border-radius: 10px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #d4af37 0%, #c5a028 100%);
+      border: none;
+      border-radius: 12px;
+      color: #0a0e27;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+    }
+
+    .login-btn:active {
+      transform: translateY(0);
+    }
+
+    .login-help {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .login-help p {
+      color: #8a8fb5;
+      font-size: 0.78rem;
+      line-height: 1.7;
+    }
+
+    .login-help strong {
+      color: #d4af37;
+    }
+
+    /* Floating background circles */
+    .bg-circle {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.03;
+      background: #d4af37;
+      pointer-events: none;
+    }
+    .bg-circle:nth-child(1) { width: 400px; height: 400px; top: -100px; right: -100px; }
+    .bg-circle:nth-child(2) { width: 300px; height: 300px; bottom: -80px; left: -80px; }
+    .bg-circle:nth-child(3) { width: 200px; height: 200px; top: 50%; left: 60%; }
+  </style>
+</head>
+<body>
+
+  <!-- Background decorations -->
+  <div class="bg-circle"></div>
+  <div class="bg-circle"></div>
+  <div class="bg-circle"></div>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="assets/logo.png" alt="GCET Logo">
+      </div>
+
+      <h1>GCET <span>Event Hub</span></h1>
+      <p class="login-subtitle">Geetanjali College of Engineering & Technology</p>
+
+      <form class="login-form" id="student-login-form">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" class="form-control" id="student-username" placeholder="e.g. 22R11A0501@gcet.edu.in" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" id="student-password" placeholder="Enter your roll number" required autocomplete="current-password">
+        </div>
+
+        <div class="login-error" id="student-login-error"></div>
+
+        <button type="submit" class="login-btn">🔓 Login</button>
+      </form>
+
+      <div class="login-help">
+        <p>
+          <strong>Username:</strong> Your Roll Number + @gcet.edu.in<br>
+          <strong>Password:</strong> Your Roll Number<br><br>
+          Example: <strong>22R11A0501@gcet.edu.in</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Check if already logged in
+    if (sessionStorage.getItem('gcet_student_logged_in') === 'true') {
+      window.location.href = 'index.html';
+    }
+
+    document.getElementById('student-login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById('student-username').value.trim().toLowerCase();
+      const password = document.getElementById('student-password').value.trim().toUpperCase();
+      const errorEl = document.getElementById('student-login-error');
+
+      // Validate username ends with @gcet.edu.in
+      if (!username.endsWith('@gcet.edu.in')) {
+        errorEl.textContent = 'Username must end with @gcet.edu.in';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      // Extract roll number from username
+      const rollFromUsername = username.replace('@gcet.edu.in', '').toUpperCase();
+
+      // Password should be the roll number
+      if (password !== rollFromUsername) {
+        errorEl.textContent = 'Invalid credentials. Password should be your roll number.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      // Check roll number is not empty
+      if (!rollFromUsername) {
+        errorEl.textContent = 'Please enter a valid roll number as username.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      // Login successful
+      sessionStorage.setItem('gcet_student_logged_in', 'true');
+      sessionStorage.setItem('gcet_student_roll', rollFromUsername);
+      sessionStorage.setItem('gcet_student_email', username);
+
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

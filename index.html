@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Geetanjali College of Engineering and Technology - Event Management Portal. Discover, register, and participate in exciting college events.">
+  <title>GCET Event Hub — Geetanjali College of Engineering & Technology</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="GCET Logo">
+        <span>GCET Event Hub<small class="college-name">Geetanjali College of Engg. & Tech.</small></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="events.html">Events</a>
+        <a href="register.html">Register</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html" class="btn btn-sm btn-secondary">Admin</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="slide-left">Discover & Register for <span class="highlight">Exciting College Events</span></h1>
+        <p class="slide-left" style="transition-delay: 0.1s;">
+          Welcome to GCET Event Hub — your one-stop platform to explore upcoming events, workshops, hackathons, and cultural fests at Geetanjali College of Engineering & Technology. Register, participate, and earn certificates!
+        </p>
+        <div class="hero-buttons slide-left" style="transition-delay: 0.2s;">
+          <a href="events.html" class="btn btn-primary btn-lg">Browse Events</a>
+          <a href="register.html" class="btn btn-secondary btn-lg">Register Now</a>
+        </div>
+        <div class="hero-stats slide-left" style="transition-delay: 0.3s;">
+          <div class="hero-stat">
+            <span class="number" data-count="50" data-suffix="+">0</span>
+            <span class="label">Events Hosted</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="2500" data-suffix="+">0</span>
+            <span class="label">Registrations</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="1800" data-suffix="+">0</span>
+            <span class="label">Certificates</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="15" data-suffix="+">0</span>
+            <span class="label">Departments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deadline Ticker -->
+  <div class="deadline-ticker">
+    <div class="ticker-content"></div>
+  </div>
+
+  <!-- Featured Events -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Featured Events</h2>
+        <p>Don't miss these trending events — register before the deadlines!</p>
+      </div>
+      <div class="grid-3" id="featured-events">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="text-center" style="margin-top: 40px;">
+        <a href="events.html" class="btn btn-secondary">View All Events →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section" style="background: rgba(255,255,255,0.02);">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2>Why GCET Event Hub?</h2>
+        <p>Everything you need to make the most of college life</p>
+      </div>
+      <div class="grid-4">
+        <div class="stat-card fade-in">
+          <div class="stat-icon">🎓</div>
+          <h4 style="color: var(--white); margin-bottom: 8px;">Certificates</h4>
+          <p style="color: var(--medium-gray); font-size: 0.85rem;">Earn verified certificates for every event you participate in</p>
+        </div>
+        <div class="stat-card fade-in" style="transition-delay: 0.1s;">
+          <div class="stat-icon">🏆</div>
+          <h4 style="color: var(--white); margin-bottom: 8px;">Win Prizes</h4>
+          <p style="color: var(--medium-gray); font-size: 0.85rem;">Exciting cash prizes and goodies for top performers</p>
+        </div>
+        <div class="stat-card fade-in" style="transition-delay: 0.2s;">
+          <div class="stat-icon">🤝</div>
+          <h4 style="color: var(--white); margin-bottom: 8px;">Networking</h4>
+          <p style="color: var(--medium-gray); font-size: 0.85rem;">Connect with peers, faculty, and industry experts</p>
+        </div>
+        <div class="stat-card fade-in" style="transition-delay: 0.3s;">
+          <div class="stat-icon">🚀</div>
+          <h4 style="color: var(--white); margin-bottom: 8px;">Skill Building</h4>
+          <p style="color: var(--medium-gray); font-size: 0.85rem;">Workshops and hackathons to boost your skills & resume</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card fade-in">
+          <div class="stat-icon">📅</div>
+          <span class="stat-number" data-count="50" data-suffix="+">0</span>
+          <span class="stat-label">Events Conducted</span>
+        </div>
+        <div class="stat-card fade-in" style="transition-delay: 0.1s;">
+          <div class="stat-icon">👥</div>
+          <span class="stat-number" data-count="2500" data-suffix="+">0</span>
+          <span class="stat-label">Students Registered</span>
+        </div>
+        <div class="stat-card fade-in" style="transition-delay: 0.2s;">
+          <div class="stat-icon">🏅</div>
+          <span class="stat-number" data-count="1800" data-suffix="+">0</span>
+          <span class="stat-label">Certificates Awarded</span>
+        </div>
+        <div class="stat-card fade-in" style="transition-delay: 0.3s;">
+          <div class="stat-icon">💰</div>
+          <span class="stat-number" data-count="5" data-suffix="L+">0</span>
+          <span class="stat-label">Prize Money</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="background: rgba(212,168,67,0.05);">
+    <div class="container text-center">
+      <div class="fade-in">
+        <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Ready to Participate?</h2>
+        <p style="color: var(--medium-gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px;">
+          Browse our upcoming events, register, and start your journey towards excellence!
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="events.html" class="btn btn-primary btn-lg">Explore Events</a>
+          <a href="about.html" class="btn btn-secondary btn-lg">Learn About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>GCET Event Hub</h4>
+          <p>Geetanjali College of Engineering and Technology's official event management platform. Discover, register, and participate in exciting college events.</p>
+          <div class="footer-social">
+            <a href="#" title="Facebook">📘</a>
+            <a href="#" title="Instagram">📸</a>
+            <a href="#" title="Twitter">🐦</a>
+            <a href="#" title="LinkedIn">💼</a>
+            <a href="#" title="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="register.html">Register</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Event Categories</h4>
+          <a href="events.html">Tech Conferences</a>
+          <a href="events.html">Cultural Fests</a>
+          <a href="events.html">Hackathons</a>
+          <a href="events.html">Workshops</a>
+          <a href="events.html">Webinars</a>
+          <a href="events.html">Sports</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p>📍 Geetanjali College of Engineering and Technology, Hyderabad</p>
+          <p>📧 events@gcet.edu.in</p>
+          <p>📞 +91 98765 43210</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 GCET Event Hub — Geetanjali College of Engineering & Technology. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" title="Back to Top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

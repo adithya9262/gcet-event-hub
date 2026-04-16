@@ -1,5 +1,5 @@
 # 🎓 GCET Event Hub
-
+![Banner](screenshots/home.png)
 A responsive web application to manage and explore college events like hackathons, workshops, cultural fests, and sports events.
 
 ## 🚀 Features

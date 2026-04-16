@@ -23,23 +23,32 @@ https://adithya9262.github.io/gcet-event-hub/
 
 ## 📸 Screenshots
 
-### 🏠 Home Page
-
-![Home](screenshots/home.png)
-
-### 📝 Registration Page
-
-![Register](screenshots/register.png)
-
 ### 🔐 Login Page
 
-![Login](screenshots/login.png)
+![Login](login.png)
 
-### ⚙️ Admin Dashboard
+### 🏠 Home Page
 
-![Admin](screenshots/admin.png)
+![Home](home.png)
 
-### 🖼️ Gallery
+### 📅 Events Page
 
-![Gallery](screenshots/gallery.png)
+![Events](events.png)
+
+### 📝 Register Page
+
+![Register](register.png)
+
+### 🖼️ Gallery Page
+
+![Gallery](gallery.png)
+
+### ⚙️ Admin Page
+
+![Admin](admin.png)
+
+### 🛠️ Admin Dashboard
+
+![Admin Dashboard](admin-dashboard.png)
+
 
